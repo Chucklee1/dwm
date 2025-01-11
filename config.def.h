@@ -73,13 +73,13 @@ static Key keys[] = {
   { 0,               XF86XK_MonBrightnessUp, spawn,          {.v = inclight } },
   { 0,             XF86XK_MonBrightnessDown, spawn,          {.v = declight } },
   { MODKEY,                       XK_Up,     focusstack,     {.i = +1 } }, /* windows */
-  { MODKEY,                       XK_Uown,   focusstack,     {.i = -1 } },
+  { MODKEY,                       XK_Down,   focusstack,     {.i = -1 } },
   { MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
   { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
   { MODKEY,                       XK_equal,  setmfact,       {.f = -0.05} },
   { MODKEY,                       XK_minus,  setmfact,       {.f = +0.05} },
   { MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
-  { MODKEY,                       XK_Left    shiftview,      { .i = +1 } }, /* tags */
+  { MODKEY,                       XK_Left,   shiftview,      { .i = +1 } }, /* tags */
   { MODKEY|ShiftMask,             XK_Left,   shiftswaptags,  { .i = +1 } },
   { MODKEY|ShiftMask,             XK_Right,  shiftview,      { .i = -1 } },
   { MODKEY,                       XK_Right,  shiftswaptags,  { .i = -1 } },
