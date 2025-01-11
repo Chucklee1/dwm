@@ -67,8 +67,8 @@ static Key keys[] = {
   { MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, /* programs */
   { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
   { MODKEY,                       XK_e,      spawn,          {.v = filecmd } },
-  { 0,              XF86XK_AudioLowerVolume, spawn,          {.v = incvol } }, /* media keys */
-  { 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = decvol } },
+  { 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = incvol } }, /* media keys */
+  { 0,              XF86XK_AudioLowerVolume, spawn,          {.v = decvol } },
   { 0,                     XF86XK_AudioMute, spawn,          {.v = togvol } },
   { 0,               XF86XK_MonBrightnessUp, spawn,          {.v = inclight } },
   { 0,             XF86XK_MonBrightnessDown, spawn,          {.v = declight } },
@@ -79,10 +79,10 @@ static Key keys[] = {
   { MODKEY,                       XK_equal,  setmfact,       {.f = -0.05} },
   { MODKEY,                       XK_minus,  setmfact,       {.f = +0.05} },
   { MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
-  { MODKEY,                       XK_Left,   shiftview,      { .i = +1 } }, /* tags */
-  { MODKEY|ShiftMask,             XK_Left,   shiftswaptags,  { .i = +1 } },
-  { MODKEY|ShiftMask,             XK_Right,  shiftview,      { .i = -1 } },
-  { MODKEY,                       XK_Right,  shiftswaptags,  { .i = -1 } },
+  { MODKEY,                       XK_Right,  shiftview,      { .i = +1 } }, /* tags */
+  { MODKEY|ShiftMask,             XK_Right,  shiftswaptags,  { .i = +1 } },
+  { MODKEY,                       XK_Left,   shiftview,      { .i = -1 } },
+  { MODKEY|ShiftMask,             XK_Left,   shiftswaptags,  { .i = -1 } },
   { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
   { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
   TAGKEYS(                        XK_1,                      0)
