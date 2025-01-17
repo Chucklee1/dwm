@@ -55,8 +55,8 @@ static const char *filecmd[] = { "thunar", NULL };
 static const char *incvol[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "1%+", NULL };
 static const char *decvol[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "1%-", NULL };
 static const char *togvol[] = { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
-static const char *inclight[] = { "brightnessctl", "set", "+1", NULL };
-static const char *declight[] = { "brightnessctl", "set", "1-", NULL };
+static const char *inclight[] = { "brightnessctl", "set", "+2", NULL };
+static const char *declight[] = { "brightnessctl", "set", "2-", NULL };
 
 /* extra includes */
 #include <X11/XF86keysym.h>
@@ -72,10 +72,10 @@ static Key keys[] = {
   { 0,                     XF86XK_AudioMute, spawn,          {.v = togvol } },
   { 0,               XF86XK_MonBrightnessUp, spawn,          {.v = inclight } },
   { 0,             XF86XK_MonBrightnessDown, spawn,          {.v = declight } },
-  { MODKEY,                       XK_Up,     focusstack,     {.i = +1 } }, /* windows */
-  { MODKEY,                       XK_Down,   focusstack,     {.i = -1 } },
-  { MODKEY|ShiftMask,             XK_Up,     incnmaster,     {.i = +1 } },
-  { MODKEY|ShiftMask,                       XK_Down,   incnmaster,     {.i = -1 } },
+  { MODKEY,                       XK_Up,     focusstack,     {.i = -1 } }, /* windows */
+  { MODKEY,                       XK_Down,   focusstack,     {.i = +1 } },
+  { MODKEY|ShiftMask,             XK_Up,     incnmaster,     {.i = -1 } },
+  { MODKEY|ShiftMask,             XK_Down,   incnmaster,     {.i = +1 } },
   { MODKEY,                       XK_equal,  setmfact,       {.f = -0.05} },
   { MODKEY,                       XK_minus,  setmfact,       {.f = +0.05} },
   { MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
