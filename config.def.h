@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=10"  };
-static const char dmenufont[]       = "JetBrains Mono Nerd Font:size=10" ;
+static const char *fonts[]          = {"JetBrains Mono Nerd Font:size=10" };
+static const char dmenufont[]       = "JetBrains Mono Nerd Font:size=10";
 static const char col_gray1[]       = "#202020";
 static const char col_gray2[]       = "#303030";
 static const char col_gray3[]       = "#B0B0B0";
@@ -76,8 +76,8 @@ static Key keys[] = {
   { MODKEY,                       XK_Down,   focusstack,     {.i = +1 } },
   { MODKEY|ShiftMask,             XK_Up,     incnmaster,     {.i = -1 } },
   { MODKEY|ShiftMask,             XK_Down,   incnmaster,     {.i = +1 } },
-  { MODKEY,                       XK_equal,  setmfact,       {.f = +0.05} },
-  { MODKEY,                       XK_minus,  setmfact,       {.f = -0.05} },
+  { MODKEY,                       XK_equal,  setmfact,       {.f = -0.05} },
+  { MODKEY,                       XK_minus,  setmfact,       {.f = +0.05} },
   { MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
   { MODKEY,                       XK_Right,  shiftview,      { .i = +1 } }, /* tags */
   { MODKEY|ShiftMask,             XK_Right,  shiftboth,      { .i = +1 } },
