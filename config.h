@@ -7,15 +7,27 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char base00[]          = "#191D24";
+static const char base01[]          = "#242933";
+static const char base02[]          = "#3B4252";
+static const char base03[]          = "#4C566A";
+static const char base04[]          = "#D8DEE9";
+static const char base05[]          = "#E5E9F0";
+static const char base06[]          = "#ECEFF4";
+static const char base07[]          = "#8FBCBB";
+static const char base08[]          = "#BF616A";
+static const char base09[]          = "#D08770";
+static const char base0A[]          = "#EBCB8B";
+static const char base0B[]          = "#A3BE8C";
+static const char base0C[]          = "#88C0D0";
+static const char base0D[]          = "#81A1C1";
+static const char base0E[]          = "#B48EAD";
+static const char base0F[]          = "#C0C8D8";
+      
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	/*               fg      bg    border   */
+	[SchemeNorm] = { base0F, base01,  base02 },
+	[SchemeSel]  = { base06, base07,  base07  },
 };
 
 /* tagging */
@@ -46,7 +58,9 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
+#define CTRL   ControlMask
+#define SHIFT  ShiftMask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -58,7 +72,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base01, "-nf", base0F, "-sb", base07, "-sf", base06, NULL };
 static const char *emacscmd[]  = { "emacs", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 
@@ -97,7 +111,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ ControlMask|Mod1Mask,         XK_Delete, quit,           {0} },
+	{ CTRL|MODKEY,                  XK_Delete, quit,           {0} },
 };
 
 /* button definitions */
