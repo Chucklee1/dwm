@@ -23,11 +23,11 @@ static const char base0C[]          = "#88C0D0";
 static const char base0D[]          = "#81A1C1";
 static const char base0E[]          = "#B48EAD";
 static const char base0F[]          = "#C0C8D8";
-      
+
 static const char *colors[][3]      = {
 	/*               fg      bg    border   */
 	[SchemeNorm] = { base0F, base01,  base02 },
-	[SchemeSel]  = { base06, base07,  base07  },
+	[SchemeSel]  = { base06, base0E,  base07  },
 };
 
 /* tagging */
@@ -72,7 +72,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base01, "-nf", base0F, "-sb", base07, "-sf", base06, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base01, "-nf", base0F, "-sb", base0E, "-sf", base06, NULL };
 static const char *emacscmd[]  = { "emacs", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 
