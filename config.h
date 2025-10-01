@@ -59,7 +59,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define CTRL   ControlMask
 #define SHIFT  ShiftMask
 #define TAGKEYS(KEY,TAG) \
