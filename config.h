@@ -1,5 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 #include <X11/XF86keysym.h>
+#include <palette.h>
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -8,31 +9,15 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char base00[]          = "#191D24";
-static const char base01[]          = "#242933";
-static const char base02[]          = "#3B4252";
-static const char base03[]          = "#4C566A";
-static const char base04[]          = "#D8DEE9";
-static const char base05[]          = "#E5E9F0";
-static const char base06[]          = "#ECEFF4";
-static const char base07[]          = "#8FBCBB";
-static const char base08[]          = "#BF616A";
-static const char base09[]          = "#D08770";
-static const char base0A[]          = "#EBCB8B";
-static const char base0B[]          = "#A3BE8C";
-static const char base0C[]          = "#88C0D0";
-static const char base0D[]          = "#81A1C1";
-static const char base0E[]          = "#B48EAD";
-static const char base0F[]          = "#C0C8D8";
 
 static const char *colors[][3]      = {
 	/*               fg      bg    border   */
 	[SchemeNorm] = { base0F, base01,  base02 },
-	[SchemeSel]  = { base06, base0E,  base07  },
+	[SchemeSel]  = { base06, base0E,  base07 },
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -53,8 +38,8 @@ static const int refreshrate = 120;  /* refresh rate (per second) for client mov
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[T]",      tile },    /* first entry is default */
+	{ "<f>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
@@ -74,9 +59,9 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base01, "-nf", base0F, "-sb", base0E, "-sf", base06, NULL };
-static const char *termcmd[]  = { "kitty",      NULL };
-static const char *emacscmd[] = { "emacs",      NULL };
-static const char *webbrcmd[] = { "librewolf",  NULL };
+static const char *termcmd[]  = { "kitty",         NULL };
+static const char *emacscmd[] = { "emacs",         NULL };
+static const char *webbrcmd[] = { "zen-twilight",  NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
