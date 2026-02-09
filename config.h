@@ -20,13 +20,14 @@ static const char *colors[][3]      = {
 static const char *tags[] = { "1", "2", "3", "4"};
 
 static const Rule rules[] = {
-	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
-	/* class       instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",      NULL,       NULL,       0,            1,           -1 },
-	{ "LibreWolf", NULL,       NULL,       1 << 8,       0,           -1 },
+    /* xprop(1):
+     *	WM_CLASS(STRING) = instance, class
+     *	WM_NAME(STRING) = title
+     */
+    /* class       instance    title       tags mask     isfloating   monitor */
+    { "Gimp",       NULL,       NULL,       0,            1,           -1 },
+	{ "Kitty",      NULL,       NULL,       0,            0,           -1 },
+	{ "Emacs",      NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
