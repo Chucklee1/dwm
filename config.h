@@ -65,13 +65,19 @@ static const char *emacscmd[] = { "emacs",         NULL };
 static const char *webbrcmd[] = { "zen-twilight",  NULL };
 
 static const Key keys[] = {
-	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd  } },
-	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_e,      spawn,          {.v = emacscmd } },
-	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = webbrcmd } },
-	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
-  { MODKEY,                       XK_w,      togglebar,      {0} },
+    /* modifier                     key        function        argument */
+    { MODKEY,                       XK_Return, spawn,          {.v = termcmd} },
+    { MODKEY,                       XK_space,  spawn,          {.v = dmenucmd} },
+    { MODKEY,                       XK_e,      spawn,          {.v = emacscmd} },
+    { MODKEY | ShiftMask,           XK_b,      spawn,          {.v = webbrcmd} },
+    { MODKEY,                       XK_q,      killclient,     {0} },
+    { MODKEY,                       XK_w,      togglebar,      {0} },
+	{ MODKEY,                       XK_Left,   focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_Right,  focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_Up,     incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_Down,   incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
