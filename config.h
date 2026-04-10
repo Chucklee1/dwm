@@ -95,7 +95,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ ControlMask|ShiftMask,        XK_Delete, quit,           {0} },
+	{ ControlMask|MODKEY,           XK_Delete, quit,           {0} },
     /* media keys */
     { 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+") },
     { 0, XF86XK_AudioLowerVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-") },
